@@ -28,11 +28,10 @@ def login(request):
         else:
             return render(request,'accounts/login.html',{'error':'Sorry! Username or Password is incorrect!'})
     else:
-        return render(request,'accounts/login.html')
+        return render(request,'accounts/login.html') 
 
 def logout(request):
     if request.method =='POST':
         auth.logout(request)
-        return redirect('home')
-    
+        return redirect('home') 
     #return render(request,'accounts/signup.html') #TODO need to route to homepage

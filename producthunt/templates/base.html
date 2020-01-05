@@ -13,9 +13,10 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
     <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Favicons -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="{% static  '/open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+    <!-- Favicons --> 
 <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -49,32 +50,36 @@
   <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-  <a class="navbar-brand" href="">
-  <img src="{% static 'logo.jpeg' %}" class="d-inline-block align-top " height="50"/>
+  <a class="navbar-brand" href="{% url 'home' %}">
+  <img src="{% static 'logo.jpeg' %}" class="d-inline-block align-top" height="50"/>
   Product Hunt
   </a>
- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" 
+ aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="basicExampleNav">
     <ul class="navbar-nav ml-auto">
       {% if user.is_authenticated %}
+      <li class="nav-item"> 
+        <a class="nav-link" href="{% url 'create' %}">Add Product<span class="oi oi-plus"></span></a>
+      </li>
       <li class="nav-item">
-      <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">logout <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
       </li>
       <form id="logout" method="POST" action="{% url 'logout' %}">
-      {% csrf_token %}
+      {% csrf_token %} 
       <input type="hidden"/><!hidden means form will not be shown>
       </form>
       {% else %}
       <li class="nav-item active">
-        <a class="nav-link" href="">Github<span class="sr-only">(current)<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="https://github.com/proxy707">Github</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'signup' %}">Sign Up <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'signup' %}">Sign Up </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'login' %}">Login <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'login' %}">Login </a>
        </li>
        {% endif %}
     </ul>
@@ -91,16 +96,15 @@
 
 </div>
 
-<footer class="text-muted">
+<footer class="page-footer font-small special-color-dark pt-4">
   <div class="container text-center">
     <p class="float-right">
       <a href="#">Back to top</a>
       <a href="mailto:princegaur1998@gmail.com" class="btn btn-primary my-2">Contact Us</a>
     </p>
     <div class="footer-copyright text-center py-3">
-    <a> <img src="{% static 'copyright.jpeg' %}" class="d-inline-block align-bottom " height="30"/>
-        Designed By:Prince Gaur
-    </a>
+   
+    <a href="https://github.com/proxy707" style="color: Red;font-weight: bold;"><img src="{% static 'copyright.jpeg' %}" class="d-inline-block align-bottom " height="30"/>Designed By Prince Gaur</a>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
