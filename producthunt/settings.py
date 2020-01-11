@@ -1,4 +1,3 @@
-
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -7,7 +6,7 @@ SECRET_KEY = 't7_n&-6#)3n2nchyqsgrd@reomet#65+!o_zm*dsj5rkg0jjxx'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'products.apps.ProductsConfig',
@@ -18,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'producthunt'
 ]
 
 MIDDLEWARE = [
