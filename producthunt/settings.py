@@ -92,7 +92,6 @@ USE_TZ = True
 STATICFILES_DIRS =[ #DIRS-> which directory to see
     os.path.join(BASE_DIR,'producthunt/static/')
 ]
-
 STATIC_ROOT =os.path.join(BASE_DIR, 'static') #Below and this static can have different names
 STATIC_URL = '/static/'
 MEDIA_ROOT =os.path.join(BASE_DIR, 'media')
