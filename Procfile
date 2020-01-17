@@ -1,1 +1,1 @@
-web: gunicorn producthunt-project.wsgi --log-file -
+web: gunicorn producthunt.wsgi --log-file -

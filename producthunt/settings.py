@@ -50,6 +50,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'producthunt.wsgi.application'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 DATABASES = {
