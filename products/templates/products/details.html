@@ -6,14 +6,14 @@
     <div class="col-2"><!12 columns in bootstrap>
         <img src="{{ product.icon.url }}" class="img-fluid" />
     </div>
-    <div class="col-10">
+    <div class="col-5 text-right">
         <a href="{{ product.url }}"<h1>{{ product.title }}</h1></a>
     </div>
 </div>
 
 <div  class="row">
     <div class="col-6"><!12 columns in bootstrap>
-        <img src="{{ product.icon }}" class="img-fluid" />
+        <img src="{{ product.image.url }}" class="img-fluid" />
     </div>
     <div class="col-2">
         <a href="javascript:{document.getElementById('upvote').submit()}"><button class="btn btn-primary btn-lg btn-block">Upvote  {{ product.votes_total}}</button></a>
