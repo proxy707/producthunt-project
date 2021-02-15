@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: producthuntpro.herokuapp.com
+Token: 6755dab622f258a6778c2231f541bd5b938c021fb334f7747e7555bd372a9acc
